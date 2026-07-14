@@ -1,4 +1,5 @@
 from django.contrib.auth import get_user_model
+from django.contrib.auth.models import AbstractUser
 
 
 def create_user(
@@ -22,7 +23,7 @@ def create_user(
     user.save()
 
 
-def get_user(user_id: int) -> get_user_model():
+def get_user(user_id: int) -> AbstractUser:
     return get_user_model().objects.get(id=user_id)
 
 
